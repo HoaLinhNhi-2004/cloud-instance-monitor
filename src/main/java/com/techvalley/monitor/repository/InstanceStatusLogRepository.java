@@ -10,4 +10,6 @@ public interface InstanceStatusLogRepository extends JpaRepository<InstanceStatu
     // dùng cho tính SLA: lấy toàn bộ log của instance trong khoảng thời gian
     List<InstanceStatusLog> findAllByInstanceIdAndChangedAtBetweenOrderByChangedAtAsc(
             Long instanceId, LocalDateTime from, LocalDateTime to);
+
+    void deleteAllByInstanceId(Long instanceId);
 }

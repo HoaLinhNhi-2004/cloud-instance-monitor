@@ -13,4 +13,6 @@ public interface AlertRepository extends JpaRepository<Alert, Long> {
 
     // dùng cho alert dedupe (business rule #2)
     Optional<Alert> findByInstanceIdAndAlertTypeAndIsResolved(Long instanceId, AlertType alertType, Boolean isResolved);
+
+    void deleteAllByInstanceId(Long instanceId);
 }
