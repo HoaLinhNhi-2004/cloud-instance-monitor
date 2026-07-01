@@ -63,16 +63,16 @@ rationale trong erd.md).
 · `/api/alerts` + `/api/alerts/{id}/resolve` · `/api/clients` + `/cost`, `/cost-forecast`, `/sla`
 · LLM: `GET /api/instances/{id}/diagnosis` (auto-generate nguyên nhân + hành động cho instance ERROR)
 
-## Git Flow (solo)
+## Git Flow (solo — GitHub Flow)
 
-`main` (release) / `develop` (integration) / `feature/{module}` (mỗi module 1 branch).
-Tự review diff trước khi merge feature → develop (không có reviewer khác). Commit
-convention: `feat:` / `fix:` / `docs:` / `refactor:` / `test:`.
+`main` là nhánh duy nhất (không có `develop`). Mỗi buổi làm trên `feature/{module}`,
+xong PR → merge thẳng vào `main`. Tự review diff trước khi merge. Commit convention:
+`feat:` / `fix:` / `docs:` / `refactor:` / `test:`.
 
 ## Tiến độ hiện tại
 
 - [x] Buổi 1: ERD + skeleton project + package structure + git init, push GitHub
-- [ ] Buổi 2: Entity (6 bảng) + Repository + `ApiResponse<T>` + `GlobalExceptionHandler`
+- [x] Buổi 2: Entity (6 bảng) + Repository + `ApiResponse<T>` + `GlobalExceptionHandler`
 - [ ] Buổi 3: Auth (JWT + Spring Security + role-based)
 - [ ] Buổi 4: Client API
 - [ ] Buổi 5: Instance CRUD (+ ghi `instance_status_logs`, deletion rule)
